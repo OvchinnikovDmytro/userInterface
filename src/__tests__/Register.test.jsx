@@ -14,7 +14,7 @@ describe('Register Page', () => {
     dob: ''
   };
 
-  test('відображає заголовок та всі поля форми', () => {
+  test('checks header and form fields rendering', () => {
     render(
       <Register 
         regData={defaultRegData} 
@@ -31,7 +31,7 @@ describe('Register Page', () => {
     expect(screen.getByRole('button', { name: /Зареєструватися/i })).toBeInTheDocument();
   });
 
-  test('викликає setRegData при зміні текстових полів', () => {
+  test('checks setRegData call on input change', () => {
     render(
       <Register 
         regData={defaultRegData} 
@@ -47,7 +47,7 @@ describe('Register Page', () => {
     expect(mockSetRegData).toHaveBeenCalled();
   });
 
-  test('правильно вибирається стать зі списку', () => {
+  test('checks gender selection from dropdown', () => {
     render(
       <Register 
         regData={defaultRegData} 
@@ -62,7 +62,7 @@ describe('Register Page', () => {
     expect(mockSetRegData).toHaveBeenCalled();
   });
 
-  test('викликає handleRegister при сабміті форми', () => {
+  test('checks handleRegister call on form submission', () => {
     render(
       <Register 
         regData={defaultRegData} 

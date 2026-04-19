@@ -8,13 +8,13 @@ const mockItems = [
 ];
 
 describe('Navbar Component', () => {
-  test('відображає всі передані пункти навігації', () => {
+  test('checks navigation items rendering', () => {
     render(<Navbar navItems={mockItems} activeTab="HOME" handleNavClick={() => {}} />);
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('TODO list')).toBeInTheDocument();
   });
 
-  test('викликає handleNavClick при натисканні на кнопку', () => {
+  test('checks handleNavClick call on button click', () => {
     const handleClick = jest.fn();
     render(<Navbar navItems={mockItems} activeTab="HOME" handleNavClick={handleClick} />);
     fireEvent.click(screen.getByText('TODO list'));
